@@ -1,5 +1,5 @@
-# connexi-test-automation
-Connexi test automation for web and mobile testing in test environment.
+# medical-supply-chain-test-automation
+medical-supply-chain test automation for web and mobile testing in test environment.
 
 ## 🚀 Getting Started
 ### Prerequisites
@@ -41,7 +41,7 @@ https://github.com/appium/appium-inspector/releases
 ### Setting Up the Project
 Clone this repository:
 ``` bash
-git clone https://github.com/rlongcop-agsx/connexi-test-automation.git
+git clone https://github.com/reden-longcop/medical-supply-chain-test-automation.git
 ```
 Activate Virtual Environment:
 ```bash
