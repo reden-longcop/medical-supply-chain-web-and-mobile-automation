@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2024-12-11T09:49:24.436059" rpa="false" schemaversion="5">
+<suite id="s1" name="TS-SIT-001" source="/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/tests/TS-SIT-001.robot">
+<test id="s1-t1" name="Test Case 1: Login with invalid password on the web custom app" line="25">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-11T09:49:24.557999" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-11T09:49:24.558056" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-11T09:49:24.557916" elapsed="0.000165"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-11T09:49:24.558153" elapsed="0.000537"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:24.558859" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-11T09:49:24.558771" elapsed="3.137421"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-11T09:49:27.696957" elapsed="0.410790"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>This is the main setup for the connexi</doc>
+<status status="PASS" start="2024-12-11T09:49:24.557412" elapsed="3.550455"/>
+</kw>
+<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
+<kw name="Navigate to login page" owner="web_login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:28.108857" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-11T09:49:28.108782" elapsed="1.178317"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2024-12-11T09:49:28.108653" elapsed="1.178623"/>
+</kw>
+<kw name="Verify Page Loaded" owner="web_login">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-11T09:49:29.287959" elapsed="0.025023"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.287538" elapsed="0.025571"/>
+</kw>
+<arg>${BASE_URL}</arg>
+<arg>${LOGIN_HEADER}</arg>
+<status status="PASS" start="2024-12-11T09:49:28.108311" elapsed="1.204855"/>
+</kw>
+<kw name="WHEN I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:29.314649" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:29.314050" elapsed="0.143289"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.313796" elapsed="0.143619"/>
+</kw>
+<arg>${ORDERING_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.313431" elapsed="0.144019"/>
+</kw>
+<kw name="AND I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:29.458091" level="INFO">Typing text 'test' into text field 'name=password'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:29.457980" elapsed="0.043932"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.457836" elapsed="0.044148"/>
+</kw>
+<arg>test</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.457606" elapsed="0.044413"/>
+</kw>
+<kw name="WHEN I click in web" owner="kadenaWebApp">
+<kw name="Click login" owner="web_login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:29.502710" level="INFO">Clicking element 'name=login'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:29.502581" elapsed="1.262775"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.502392" elapsed="1.263436"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2024-12-11T09:49:29.502166" elapsed="1.263778"/>
+</kw>
+<kw name="THEN Message should display in web" owner="kadenaWebApp">
+<kw name="Validate Text Message" owner="web_login">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:30.784111" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-11T09:49:30.767654" elapsed="0.016569"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-11T09:49:30.767259" elapsed="0.017077"/>
+</kw>
+<arg>Invalid username or password.</arg>
+<status status="PASS" start="2024-12-11T09:49:30.766693" elapsed="0.017704"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Custom Capture Page Screenshot</arg>
+<arg>@{TEST TAGS}</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-11T09:49:30.785205" elapsed="0.000187"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-11T09:49:30.785537" elapsed="0.083624"/>
+</kw>
+<doc>This is the main teardown for the web app</doc>
+<status status="PASS" start="2024-12-11T09:49:30.784812" elapsed="0.084430"/>
+</kw>
+<doc>Login with invalid password</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="PASS" start="2024-12-11T09:49:24.557010" elapsed="6.312301"/>
+</test>
+<test id="s1-t2" name="Test Case 2: Login with invalid email on the web custom app" line="35">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-11T09:49:30.870284" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-11T09:49:30.870701" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-11T09:49:30.870092" elapsed="0.000665"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-11T09:49:30.870856" elapsed="0.000090"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:30.871176" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-11T09:49:30.871052" elapsed="1.301829"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-11T09:49:32.175851" elapsed="0.383666"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>This is the main setup for the connexi</doc>
+<status status="PASS" start="2024-12-11T09:49:30.869894" elapsed="1.689749"/>
+</kw>
+<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
+<kw name="Navigate to login page" owner="web_login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:32.560548" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-11T09:49:32.560481" elapsed="0.936607"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2024-12-11T09:49:32.560355" elapsed="0.936922"/>
+</kw>
+<kw name="Verify Page Loaded" owner="web_login">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-11T09:49:33.497961" elapsed="0.019087"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.497549" elapsed="0.019632"/>
+</kw>
+<arg>${BASE_URL}</arg>
+<arg>${LOGIN_HEADER}</arg>
+<status status="PASS" start="2024-12-11T09:49:32.560046" elapsed="0.957209"/>
+</kw>
+<kw name="WHEN I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:33.518711" level="INFO">Typing text 'invalid@email.com' into text field 'name=username'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:33.518234" elapsed="0.125777"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.517936" elapsed="0.126162"/>
+</kw>
+<arg>invalid@email.com</arg>
+<arg>${EMAIL}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.517544" elapsed="0.126590"/>
+</kw>
+<kw name="AND I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:33.644968" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:33.644828" elapsed="0.040784"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.644540" elapsed="0.041137"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.644302" elapsed="0.041403"/>
+</kw>
+<kw name="WHEN I click in web" owner="kadenaWebApp">
+<kw name="Click login" owner="web_login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:33.686241" level="INFO">Clicking element 'name=login'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:33.686150" elapsed="0.885883"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.686025" elapsed="0.886202"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2024-12-11T09:49:33.685853" elapsed="0.886534"/>
+</kw>
+<kw name="THEN Message should display in web" owner="kadenaWebApp">
+<kw name="Validate Text Message" owner="web_login">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:34.589937" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-11T09:49:34.574091" elapsed="0.015962"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-11T09:49:34.573346" elapsed="0.016819"/>
+</kw>
+<arg>Invalid username or password.</arg>
+<status status="PASS" start="2024-12-11T09:49:34.572802" elapsed="0.017422"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Custom Capture Page Screenshot</arg>
+<arg>@{TEST TAGS}</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-11T09:49:34.591211" elapsed="0.000152"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-11T09:49:34.591523" elapsed="0.082719"/>
+</kw>
+<doc>This is the main teardown for the web app</doc>
+<status status="PASS" start="2024-12-11T09:49:34.590832" elapsed="0.083494"/>
+</kw>
+<doc>Login with invalid email</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="PASS" start="2024-12-11T09:49:30.869540" elapsed="3.804859"/>
+</test>
+<test id="s1-t3" name="Test Case 3: Login with SQL Injection on the web custom app" line="45">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-11T09:49:34.675302" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-11T09:49:34.675385" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-11T09:49:34.675125" elapsed="0.000287"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-11T09:49:34.675483" elapsed="0.000063"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:34.675741" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-11T09:49:34.675637" elapsed="1.305067"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-11T09:49:35.981199" elapsed="0.374233"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>This is the main setup for the connexi</doc>
+<status status="PASS" start="2024-12-11T09:49:34.674935" elapsed="1.680624"/>
+</kw>
+<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
+<kw name="Navigate to login page" owner="web_login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:36.356248" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-11T09:49:36.356187" elapsed="1.119123"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2024-12-11T09:49:36.356061" elapsed="1.119618"/>
+</kw>
+<kw name="Verify Page Loaded" owner="web_login">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-11T09:49:37.477153" elapsed="0.015038"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.476376" elapsed="0.015959"/>
+</kw>
+<arg>${BASE_URL}</arg>
+<arg>${LOGIN_HEADER}</arg>
+<status status="PASS" start="2024-12-11T09:49:36.355816" elapsed="1.136586"/>
+</kw>
+<kw name="WHEN I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:37.493668" level="INFO">Typing text '' AND 1=1;--' into text field 'name=username'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:37.493403" elapsed="0.130075"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.493111" elapsed="0.130447"/>
+</kw>
+<arg>' AND 1=1;--</arg>
+<arg>${EMAIL}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.492712" elapsed="0.130884"/>
+</kw>
+<kw name="AND I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:37.624615" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:37.624409" elapsed="0.036271"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.624190" elapsed="0.036562"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.623762" elapsed="0.037021"/>
+</kw>
+<kw name="WHEN I click in web" owner="kadenaWebApp">
+<kw name="Click login" owner="web_login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:37.661310" level="INFO">Clicking element 'name=login'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T09:49:37.661224" elapsed="0.965707"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.661102" elapsed="0.966093"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2024-12-11T09:49:37.660925" elapsed="0.966395"/>
+</kw>
+<kw name="THEN Message should display in web" owner="kadenaWebApp">
+<kw name="Validate Text Message" owner="web_login">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-11T09:49:38.637353" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-11T09:49:38.628484" elapsed="0.008941"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-11T09:49:38.628188" elapsed="0.009310"/>
+</kw>
+<arg>Invalid username or password.</arg>
+<status status="PASS" start="2024-12-11T09:49:38.627771" elapsed="0.009759"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Custom Capture Page Screenshot</arg>
+<arg>@{TEST TAGS}</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-11T09:49:38.637991" elapsed="0.000139"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-11T09:49:38.638331" elapsed="0.082564"/>
+</kw>
+<doc>This is the main teardown for the web app</doc>
+<status status="PASS" start="2024-12-11T09:49:38.637787" elapsed="0.083196"/>
+</kw>
+<doc>Login with SQL Injection</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="PASS" start="2024-12-11T09:49:34.674625" elapsed="4.046426"/>
+</test>
+<test id="s1-t4" name="Test Case 4: Login with invalid password on the mobile custom app" line="55">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-11T09:49:38.721829" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-11T09:49:38.721914" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-11T09:49:38.721676" elapsed="0.000268"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-11T09:49:38.722028" elapsed="0.000067"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-12-11T09:49:38.722171" elapsed="4.908880"/>
+</kw>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="PASS" start="2024-12-11T09:49:38.721523" elapsed="4.909893"/>
+</kw>
+<kw name="GIVEN I navigate to mobile login page" owner="kadenaMobileApp">
+<kw name="Verify page loaded" owner="mobile_login">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-11T09:49:43.632867" elapsed="0.946871"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:43.632453" elapsed="0.947529"/>
+</kw>
+<kw name="Click login" owner="mobile_login">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:44.584434" level="INFO">Clicking element 'accessibility_id=Log in'.</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:44.581072" elapsed="0.090746"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:44.580442" elapsed="0.091564"/>
+</kw>
+<arg>${MOBILE_LOGIN_BTN}</arg>
+<status status="PASS" start="2024-12-11T09:49:43.631930" elapsed="1.040173"/>
+</kw>
+<kw name="WHEN I enter in mobile" owner="kadenaMobileApp">
+<kw name="Enter credential" owner="mobile_login">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:44.677982" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'xpath=//*[@text="Enter email"]'</msg>
+<msg time="2024-12-11T09:49:45.933628" level="INFO">xpath criteria: //*[@text="Enter email"]</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:44.674355" elapsed="1.259417"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:44.673672" elapsed="1.260250"/>
+</kw>
+<arg>${ORDERING_EMAIL}</arg>
+<arg>${MOBILE_EMAIL}</arg>
+<status status="PASS" start="2024-12-11T09:49:44.672770" elapsed="1.261232"/>
+</kw>
+<kw name="AND I enter in mobile" owner="kadenaMobileApp">
+<kw name="Enter credential" owner="mobile_login">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:45.937841" level="INFO">Typing text 'test' into text field 'xpath=//*[@text="Enter password"]'</msg>
+<msg time="2024-12-11T09:49:46.663353" level="INFO">xpath criteria: //*[@text="Enter password"]</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:45.935135" elapsed="0.728413"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:45.934814" elapsed="0.728965"/>
+</kw>
+<arg>test</arg>
+<arg>${MOBILE_PASSWORD}</arg>
+<status status="PASS" start="2024-12-11T09:49:45.934364" elapsed="0.730687"/>
+</kw>
+<kw name="WHEN I click in mobile" owner="kadenaMobileApp">
+<kw name="Click login" owner="mobile_login">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:46.670086" level="INFO">Clicking element 'xpath=//*[@content-desc="Log In"]'.</msg>
+<msg time="2024-12-11T09:49:47.256531" level="INFO">xpath criteria: //*[@content-desc="Log In"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:46.666720" elapsed="0.589890"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:46.666286" elapsed="0.590416"/>
+</kw>
+<arg>${MOBILE_INNER_LOGIN_BTN}</arg>
+<status status="PASS" start="2024-12-11T09:49:46.665643" elapsed="0.591099"/>
+</kw>
+<kw name="THEN Message should display in mobile" owner="kadenaMobileApp">
+<kw name="Validate Error Message" owner="mobile_login">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-12-11T09:49:47.257395" elapsed="1.530239"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-11T09:49:47.257217" elapsed="1.530696"/>
+</kw>
+<arg>Invalid username or password</arg>
+<status status="PASS" start="2024-12-11T09:49:47.256973" elapsed="1.531095"/>
+</kw>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Custom Capture Page Screenshot</arg>
+<arg>@{TEST TAGS}</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-11T09:49:48.789688" elapsed="0.000238"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-11T09:49:48.790174" elapsed="0.328363"/>
+</kw>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="PASS" start="2024-12-11T09:49:48.788995" elapsed="0.329746"/>
+</kw>
+<doc>Login with invalid password</doc>
+<tag>M0MAIN-SIT-002</tag>
+<tag>MOBILE</tag>
+<status status="PASS" start="2024-12-11T09:49:38.721224" elapsed="10.397728"/>
+</test>
+<test id="s1-t5" name="Test Case 5: Login with invalid email on the mobile custom app" line="67">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-11T09:49:49.121362" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-11T09:49:49.121595" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-11T09:49:49.120845" elapsed="0.000844"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-11T09:49:49.121925" elapsed="0.000173"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-12-11T09:49:49.122320" elapsed="5.391358"/>
+</kw>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="PASS" start="2024-12-11T09:49:49.120422" elapsed="5.393705"/>
+</kw>
+<kw name="GIVEN I navigate to mobile login page" owner="kadenaMobileApp">
+<kw name="Verify page loaded" owner="mobile_login">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-11T09:49:54.515191" elapsed="0.910656"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:54.515012" elapsed="0.911177"/>
+</kw>
+<kw name="Click login" owner="mobile_login">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:55.431535" level="INFO">Clicking element 'accessibility_id=Log in'.</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:55.427809" elapsed="0.074653"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:55.426878" elapsed="0.075833"/>
+</kw>
+<arg>${MOBILE_LOGIN_BTN}</arg>
+<status status="PASS" start="2024-12-11T09:49:54.514711" elapsed="0.988155"/>
+</kw>
+<kw name="WHEN I enter in mobile" owner="kadenaMobileApp">
+<kw name="Enter credential" owner="mobile_login">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:55.508592" level="INFO">Typing text 'admin' into text field 'xpath=//*[@text="Enter email"]'</msg>
+<msg time="2024-12-11T09:49:56.743732" level="INFO">xpath criteria: //*[@text="Enter email"]</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:55.504840" elapsed="1.239012"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:55.504258" elapsed="1.239726"/>
+</kw>
+<arg>admin</arg>
+<arg>${MOBILE_EMAIL}</arg>
+<status status="PASS" start="2024-12-11T09:49:55.503419" elapsed="1.240643"/>
+</kw>
+<kw name="AND I enter in mobile" owner="kadenaMobileApp">
+<kw name="Enter credential" owner="mobile_login">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:56.750156" level="INFO">Typing text 'password' into text field 'xpath=//*[@text="Enter password"]'</msg>
+<msg time="2024-12-11T09:49:57.964092" level="INFO">xpath criteria: //*[@text="Enter password"]</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:56.746107" elapsed="1.218188"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:56.745412" elapsed="1.219129"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${MOBILE_PASSWORD}</arg>
+<status status="PASS" start="2024-12-11T09:49:56.744617" elapsed="1.220080"/>
+</kw>
+<kw name="WHEN I click in mobile" owner="kadenaMobileApp">
+<kw name="Click login" owner="mobile_login">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-11T09:49:57.970364" level="INFO">Clicking element 'xpath=//*[@content-desc="Log In"]'.</msg>
+<msg time="2024-12-11T09:49:58.550385" level="INFO">xpath criteria: //*[@content-desc="Log In"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:49:57.966694" elapsed="0.583890"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:49:57.966119" elapsed="0.584681"/>
+</kw>
+<arg>${MOBILE_INNER_LOGIN_BTN}</arg>
+<status status="PASS" start="2024-12-11T09:49:57.965300" elapsed="0.585647"/>
+</kw>
+<kw name="THEN Message should display in mobile" owner="kadenaMobileApp">
+<kw name="Validate Error Message" owner="mobile_login">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-12-11T09:49:58.552672" elapsed="0.953025"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-11T09:49:58.552196" elapsed="0.955716"/>
+</kw>
+<arg>Invalid username or password</arg>
+<status status="PASS" start="2024-12-11T09:49:58.551477" elapsed="0.956581"/>
+</kw>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Custom Capture Page Screenshot</arg>
+<arg>@{TEST TAGS}</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-11T09:49:59.509715" elapsed="0.000252"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-11T09:49:59.510176" elapsed="0.338144"/>
+</kw>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="PASS" start="2024-12-11T09:49:59.508978" elapsed="0.339599"/>
+</kw>
+<doc>Login with invalid email</doc>
+<tag>M0MAIN-SIT-002</tag>
+<tag>MOBILE</tag>
+<status status="PASS" start="2024-12-11T09:49:49.119555" elapsed="10.729446"/>
+</test>
+<test id="s1-t6" name="Test Case 6: Login with SQL injection on the mobile custom app" line="79">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-11T09:49:59.851955" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-11T09:49:59.852116" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-11T09:49:59.851308" elapsed="0.000883"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-11T09:49:59.852372" elapsed="0.000150"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-12-11T09:49:59.852675" elapsed="5.061839"/>
+</kw>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="PASS" start="2024-12-11T09:49:59.850979" elapsed="5.064293"/>
+</kw>
+<kw name="GIVEN I navigate to mobile login page" owner="kadenaMobileApp">
+<kw name="Verify page loaded" owner="mobile_login">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-11T09:50:04.916576" elapsed="0.994909"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:50:04.916400" elapsed="0.995336"/>
+</kw>
+<kw name="Click login" owner="mobile_login">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-11T09:50:05.917004" level="INFO">Clicking element 'accessibility_id=Log in'.</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:50:05.912927" elapsed="0.150102"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:50:05.912187" elapsed="0.151088"/>
+</kw>
+<arg>${MOBILE_LOGIN_BTN}</arg>
+<status status="PASS" start="2024-12-11T09:50:04.916063" elapsed="1.147365"/>
+</kw>
+<kw name="WHEN I enter in mobile" owner="kadenaMobileApp">
+<kw name="Enter credential" owner="mobile_login">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-11T09:50:06.069379" level="INFO">Typing text '' AND 1=1;--' into text field 'xpath=//*[@text="Enter email"]'</msg>
+<msg time="2024-12-11T09:50:07.283263" level="INFO">xpath criteria: //*[@text="Enter email"]</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:50:06.065573" elapsed="1.217774"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:50:06.064817" elapsed="1.218625"/>
+</kw>
+<arg>' AND 1=1;--</arg>
+<arg>${MOBILE_EMAIL}</arg>
+<status status="PASS" start="2024-12-11T09:50:06.063956" elapsed="1.219538"/>
+</kw>
+<kw name="AND I enter in mobile" owner="kadenaMobileApp">
+<kw name="Enter credential" owner="mobile_login">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-11T09:50:07.285969" level="INFO">Typing text 'password' into text field 'xpath=//*[@text="Enter password"]'</msg>
+<msg time="2024-12-11T09:50:08.448761" level="INFO">xpath criteria: //*[@text="Enter password"]</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:50:07.284340" elapsed="1.164599"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:50:07.284130" elapsed="1.165037"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${MOBILE_PASSWORD}</arg>
+<status status="PASS" start="2024-12-11T09:50:07.283779" elapsed="1.165551"/>
+</kw>
+<kw name="WHEN I click in mobile" owner="kadenaMobileApp">
+<kw name="Click login" owner="mobile_login">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-11T09:50:08.454237" level="INFO">Clicking element 'xpath=//*[@content-desc="Log In"]'.</msg>
+<msg time="2024-12-11T09:50:09.071067" level="INFO">xpath criteria: //*[@content-desc="Log In"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-11T09:50:08.450927" elapsed="0.620389"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-11T09:50:08.450499" elapsed="0.621034"/>
+</kw>
+<arg>${MOBILE_INNER_LOGIN_BTN}</arg>
+<status status="PASS" start="2024-12-11T09:50:08.449863" elapsed="0.621755"/>
+</kw>
+<kw name="THEN Message should display in mobile" owner="kadenaMobileApp">
+<kw name="Validate Error Message" owner="mobile_login">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-12-11T09:50:09.073349" elapsed="1.004772"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-11T09:50:09.072923" elapsed="1.005502"/>
+</kw>
+<arg>Invalid username or password</arg>
+<status status="PASS" start="2024-12-11T09:50:09.072286" elapsed="1.006274"/>
+</kw>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Custom Capture Page Screenshot</arg>
+<arg>@{TEST TAGS}</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-11T09:50:10.080045" elapsed="0.000244"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-11T09:50:10.080478" elapsed="0.337361"/>
+</kw>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="PASS" start="2024-12-11T09:50:10.079337" elapsed="0.338699"/>
+</kw>
+<doc>Login with SQL Injection</doc>
+<tag>M0MAIN-SIT-002</tag>
+<tag>MOBILE</tag>
+<tag>sample</tag>
+<status status="PASS" start="2024-12-11T09:49:59.850319" elapsed="10.567940"/>
+</test>
+<doc>Login with invalid and valid credentials</doc>
+<status status="PASS" start="2024-12-11T09:49:24.436761" elapsed="45.983286"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">M0MAIN-SIT-001</stat>
+<stat pass="3" fail="0" skip="0">M0MAIN-SIT-002</stat>
+<stat pass="3" fail="0" skip="0">MOBILE</stat>
+<stat pass="1" fail="0" skip="0">sample</stat>
+<stat pass="3" fail="0" skip="0">WEB</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="TS-SIT-001">TS-SIT-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

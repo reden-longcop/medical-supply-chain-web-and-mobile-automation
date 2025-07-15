@@ -1,0 +1,59 @@
+name: Robot Framework Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run_automation_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies from requirements.txt
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Robot Framework tests
+      shell: bash
+      run: |
+        robot -d reports \
+        -v BASE_URL:${{ secrets.BASE_URL }} \
+        -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
+        -v ANALYTICS_EMAIL:${{ secrets.ANALYTICS_EMAIL }} \
+        -v FORECASTING_EMAIL:${{ secrets.FORECASTING_EMAIL }} \
+        -v INVENTORY_EMAIL:${{ secrets.INVENTORY_EMAIL }} \
+        -v ORDERING_EMAIL:${{ secrets.ORDERING_EMAIL }} \
+        -v PROCUREMENTSP_EMAIL:${{ secrets.PROCUREMENTSP_EMAIL }} \
+        -v PROCUREMENT_EMAIL:${{ secrets.PROCUREMENT_EMAIL }} \
+        -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
+        -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
+        -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
+        -i web \
+        tests
+
+    - name: Archive test report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-report
+        path: reports/
+
+    - name: Publish test results as a GitHub Pages site
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GH_PAGES_TOKEN }}
+        external_repository: ${{ github.repository }}
+        publish_dir: ./reports/
+        publish_branch: gh-pages 
+        commit_message: "Publish Connexi Report"

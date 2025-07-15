@@ -1,0 +1,3 @@
+reports/*.txt
+variables/privateCredentials.robot
+.github/workflows/for-testing.yml

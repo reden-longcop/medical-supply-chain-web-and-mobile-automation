@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2024-12-06T13:35:26.071356" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Scenarios" source="/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/test-scenarios">
+<suite id="s1-s1" name="TS-SIT-001" source="/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/test-scenarios/TS-SIT-001.robot">
+<test id="s1-s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="25">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-06T13:35:26.192404" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-06T13:35:26.192572" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-06T13:35:26.192295" elapsed="0.000315"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-06T13:35:26.192689" elapsed="0.000583"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:26.193453" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T13:35:26.193359" elapsed="1.519169"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>This is the main setup for the connexi</doc>
+<status status="PASS" start="2024-12-06T13:35:26.191773" elapsed="1.521278"/>
+</kw>
+<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
+<kw name="Navigate to login page" owner="web_login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:27.715227" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-06T13:35:27.715114" elapsed="0.974648"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2024-12-06T13:35:27.714905" elapsed="0.977365"/>
+</kw>
+<kw name="Verify Page Loaded" owner="web_login">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-06T13:35:28.695375" elapsed="0.014802"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.693964" elapsed="0.016320"/>
+</kw>
+<arg>${BASE_URL}</arg>
+<arg>${LOGIN_HEADER}</arg>
+<status status="PASS" start="2024-12-06T13:35:27.714121" elapsed="0.996212"/>
+</kw>
+<kw name="WHEN I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:28.711815" level="INFO">Typing text 'invalid@email.com' into text field 'name=username'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T13:35:28.711240" elapsed="0.117544"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.711022" elapsed="0.117899"/>
+</kw>
+<arg>invalid@email.com</arg>
+<arg>${EMAIL}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.710722" elapsed="0.118266"/>
+</kw>
+<kw name="AND I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:28.829817" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T13:35:28.829692" elapsed="0.035864"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.829510" elapsed="0.036125"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.829184" elapsed="0.036482"/>
+</kw>
+<kw name="WHEN I click in web" owner="kadenaWebApp">
+<kw name="Click login" owner="web_login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:28.867993" level="INFO">Clicking element 'name=login'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T13:35:28.867847" elapsed="0.901938"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.867651" elapsed="0.902316"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2024-12-06T13:35:28.867383" elapsed="0.902673"/>
+</kw>
+<kw name="THEN Message should display in web" owner="kadenaWebApp">
+<kw name="Validate Error Message" owner="web_login">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:29.789076" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-06T13:35:29.771304" elapsed="0.017880"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-06T13:35:29.770948" elapsed="0.018347"/>
+</kw>
+<arg>Invalid username or password.</arg>
+<status status="PASS" start="2024-12-06T13:35:29.770486" elapsed="0.018870"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:29.956885" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-12-06T13:35:29.790155" elapsed="0.166791"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-06T13:35:29.957063" elapsed="0.078863"/>
+</kw>
+<doc>This is the main teardown for the web app</doc>
+<status status="PASS" start="2024-12-06T13:35:29.789825" elapsed="0.246174"/>
+</kw>
+<doc>Login with invalid email</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="PASS" start="2024-12-06T13:35:26.191271" elapsed="3.844792"/>
+</test>
+<test id="s1-s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="35">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-06T13:35:30.036856" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-06T13:35:30.036921" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2024-12-06T13:35:30.036717" elapsed="0.000226"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" start="2024-12-06T13:35:30.037003" elapsed="0.000057"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:30.037241" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T13:35:30.037143" elapsed="1.320868"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>This is the main setup for the connexi</doc>
+<status status="PASS" start="2024-12-06T13:35:30.036555" elapsed="1.321704"/>
+</kw>
+<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
+<kw name="Navigate to login page" owner="web_login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:31.359146" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-06T13:35:31.359076" elapsed="1.223113"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2024-12-06T13:35:31.358936" elapsed="1.223442"/>
+</kw>
+<kw name="Verify Page Loaded" owner="web_login">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-06T13:35:32.586991" elapsed="0.016988"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.583093" elapsed="0.021001"/>
+</kw>
+<arg>${BASE_URL}</arg>
+<arg>${LOGIN_HEADER}</arg>
+<status status="PASS" start="2024-12-06T13:35:31.358667" elapsed="1.245480"/>
+</kw>
+<kw name="WHEN I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:32.605525" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T13:35:32.605164" elapsed="0.150963"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.604900" elapsed="0.151309"/>
+</kw>
+<arg>${ORDERING_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.604546" elapsed="0.151693"/>
+</kw>
+<kw name="AND I enter in web" owner="kadenaWebApp">
+<kw name="Enter credential" owner="web_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:32.756940" level="INFO">Typing text 'invalid_password' into text field 'name=password'.</msg>
+<arg>${locator}</arg>
+<arg>${credential}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T13:35:32.756846" elapsed="0.044170"/>
+</kw>
+<arg>${credentials}</arg>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.756711" elapsed="0.044386"/>
+</kw>
+<arg>invalid_password</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.756509" elapsed="0.044617"/>
+</kw>
+<kw name="WHEN I click in web" owner="kadenaWebApp">
+<kw name="Click login" owner="web_login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:32.801727" level="INFO">Clicking element 'name=login'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T13:35:32.801608" elapsed="1.030802"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.801463" elapsed="1.031199"/>
+</kw>
+<arg>${LOGIN_BUTTON}</arg>
+<status status="PASS" start="2024-12-06T13:35:32.801278" elapsed="1.031465"/>
+</kw>
+<kw name="THEN Message should display in web" owner="kadenaWebApp">
+<kw name="Validate Error Message" owner="web_login">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:33.852886" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-06T13:35:33.833809" elapsed="0.019145"/>
+</kw>
+<arg>${text}</arg>
+<status status="PASS" start="2024-12-06T13:35:33.833493" elapsed="0.019525"/>
+</kw>
+<arg>Invalid username or password.</arg>
+<status status="PASS" start="2024-12-06T13:35:33.833085" elapsed="0.019960"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T13:35:34.040445" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-12-06T13:35:33.853775" elapsed="0.186731"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-06T13:35:34.040648" elapsed="0.079450"/>
+</kw>
+<doc>This is the main teardown for the web app</doc>
+<status status="PASS" start="2024-12-06T13:35:33.853428" elapsed="0.266743"/>
+</kw>
+<doc>Login with invalid password</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="PASS" start="2024-12-06T13:35:30.036266" elapsed="4.083976"/>
+</test>
+<doc>Login with invalid and valid credentials</doc>
+<status status="PASS" start="2024-12-06T13:35:26.085310" elapsed="8.035428"/>
+</suite>
+<status status="PASS" start="2024-12-06T13:35:26.072061" elapsed="8.049054"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">M0MAIN-SIT-001</stat>
+<stat pass="2" fail="0" skip="0">WEB</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-06T13:35:26.185263" level="WARN">Imported resource file '/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/resources/PO_mobile/mobile_home.robot' is empty.</msg>
+</errors>
+</robot>
